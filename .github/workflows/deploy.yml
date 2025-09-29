@@ -34,17 +34,15 @@ jobs:
           REPO_NAME=$(echo "${{ github.repository }}" | awk -F/ '{print $2}')
           npm run build -- --configuration production --base-href "/$REPO_NAME/"
       
-      # (GitHub Pages + SPA) Copia index.html a 404.html para rutas del router
+      # Modificación del paso SPA fallback
       - name: SPA fallback (copy index.html to 404.html)
         run: |
-          APP_DIR=$(node -e "console.log(require('./angular.json').projects[Object.keys(require('./angular.json').projects)[0]].architect.build.options.outputPath)")
-          cp "$APP_DIR/index.html" "$APP_DIR/404.html"
+          cp dist/*/index.html dist/*/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: |
-            $(node -e "console.log(require('./angular.json').projects[Object.keys(require('./angular.json').projects)[0]].architect.build.options.outputPath)")
+          path: dist/*
 
   deploy:
     environment:
