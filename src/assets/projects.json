@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Task List",
+    "description": "To-do minimal con Angular y localStorage.",
+    "repo": "https://github.com/tuusuario/angular-task-list",
+    "demo": "#",
+    "tags": ["angular", "ui"],
+    "image": ""
+  },
+  {
+    "id": 2,
+    "title": "Catálogo estático",
+    "description": "Grid de productos con filtro por categoría.",
+    "repo": "https://github.com/tuusuario/angular-catalog",
+    "demo": "#",
+    "tags": ["angular", "filters"],
+    "image": ""
+  }
+]
