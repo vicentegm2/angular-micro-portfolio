@@ -39,11 +39,7 @@ ng serve -o
 - `npm run build` → build producción
 
 ## 🌍 Deploy
-
-El proyecto se desplegará en:
-
-- GitHub Pages → [demo link pendiente]
-- Alternativa: Vercel/Netlify
+Por ahora el deploy está **deshabilitado** mientras terminamos la configuración. Más adelante se activará GitHub Pages o Vercel.
 
 ## 📚 Aprendizaje
 
