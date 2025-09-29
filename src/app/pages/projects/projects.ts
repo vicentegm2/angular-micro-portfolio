@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
       <h2>Projects</h2>
       <p>Pronto aquí irán las tarjetas de proyectos desde <code>assets/projects.json</code>.</p>
     </section>
-  `
+  `,
 })
 export class Projects {}

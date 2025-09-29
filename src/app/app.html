@@ -1,8 +1,21 @@
-<nav style="position:sticky;top:0;display:flex;gap:1rem;align-items:center;padding:.75rem 1rem;border-bottom:1px solid #e5e7eb;backdrop-filter:blur(6px)">
-  <a routerLink="/" style="font-weight:700;text-decoration:none;color:inherit">Home</a>
-  <a routerLink="/projects" routerLinkActive="active" style="text-decoration:none;color:inherit">Projects</a>
+<nav
+  style="
+    position: sticky;
+    top: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    backdrop-filter: blur(6px);
+  "
+>
+  <a routerLink="/" style="font-weight: 700; text-decoration: none; color: inherit">Home</a>
+  <a routerLink="/projects" routerLinkActive="active" style="text-decoration: none; color: inherit"
+    >Projects</a
+  >
 </nav>
 
-<main style="padding:1rem">
+<main style="padding: 1rem">
   <router-outlet></router-outlet>
 </main>
