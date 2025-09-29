@@ -1,4 +1,5 @@
 # Angular Micro-Portfolio
+![CI](https://github.com/vicentegm2/angular-micro-portfolio/actions/workflows/ci.yml/badge.svg)
 
 Proyecto de aprendizaje con **Angular 22 (standalone components, signals)** y buenas prácticas de GitHub.  
 El objetivo es crear un **portfolio simple** con una página de inicio y una galería de proyectos cargada desde `assets/projects.json`.
