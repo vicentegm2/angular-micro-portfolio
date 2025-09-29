@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build (prod) with base-href
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | awk -F/ '{print $2}')
+          npm run build -- --configuration production --base-href "/$REPO_NAME/"
+      
+      # (GitHub Pages + SPA) Copia index.html a 404.html para rutas del router
+      - name: SPA fallback (copy index.html to 404.html)
+        run: |
+          APP_DIR=$(node -e "console.log(require('./angular.json').projects[Object.keys(require('./angular.json').projects)[0]].architect.build.options.outputPath)")
+          cp "$APP_DIR/index.html" "$APP_DIR/404.html"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: |
+            $(node -e "console.log(require('./angular.json').projects[Object.keys(require('./angular.json').projects)[0]].architect.build.options.outputPath)")
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
