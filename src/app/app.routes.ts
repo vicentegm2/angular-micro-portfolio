@@ -6,6 +6,6 @@ import { Social } from './pages/social/social';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'projects', component: Projects },
-    { path: 'social', component: Social}, // Cards para redes sociales
+  { path: 'social', component: Social }, // Cards para redes sociales
   { path: '**', redirectTo: '' },
 ];

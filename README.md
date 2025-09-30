@@ -1,4 +1,5 @@
 # Angular Micro-Portfolio
+
 ![CI](https://github.com/vicentegm2/angular-micro-portfolio/actions/workflows/ci.yml/badge.svg)
 
 Proyecto de aprendizaje con **Angular 22 (standalone components, signals)** y buenas prácticas de GitHub.  
@@ -39,6 +40,7 @@ ng serve -o
 - `npm run build` → build producción
 
 ## 🌍 Deploy
+
 Por ahora el deploy está **deshabilitado** mientras terminamos la configuración. Más adelante se activará GitHub Pages o Vercel.
 
 ## 📚 Aprendizaje
