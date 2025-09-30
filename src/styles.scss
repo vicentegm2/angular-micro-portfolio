@@ -1,1 +1,293 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ * Archivo de estilos globales (styles.css)
+ * Incorpora variables de tema, estilos base y componentes
+ */
+
+:root {
+  /* Colores */
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #6b7280;
+  --card: #f3f4f6;
+  --border: #e5e7eb;
+
+  /* Formato RGB para el backdrop-filter (blur) */
+  --bg-rgb: 255, 255, 255;
+}
+
+:root[data-theme='dark'] {
+  /* Colores - Tema Oscuro */
+  --bg: #0b0c10;
+  --fg: #e5e7eb;
+  --muted: #9ca3af;
+  --card: #111827;
+  --border: #1f2937;
+
+  /* Formato RGB para el backdrop-filter (blur) */
+  --bg-rgb: 11, 12, 16;
+}
+
+/* ---------------------------------- */
+/* BASE */
+/* ---------------------------------- */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    sans-serif;
+  /* Suavizado de fuente para mejor visualización */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------- */
+/* TIPOGRAFÍA */
+/* ---------------------------------- */
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+
+/* ---------------------------------- */
+/* LAYOUT GLOBAL */
+/* ---------------------------------- */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Padding lateral */
+}
+
+.main-content {
+  /* Añade espacio superior para que el contenido no quede oculto bajo el nav sticky */
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* ---------------------------------- */
+/* NAVEGACIÓN (.nav) */
+/* ---------------------------------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  /* Fondo semi-transparente usando la variable RGB */
+  background: rgba(var(--bg-rgb), 0.9);
+  border-bottom: 1px solid var(--border);
+  /* Efecto moderno para el nav sticky */
+  backdrop-filter: blur(6px);
+  /* Asegura que no haya saltos visuales al hacer scroll */
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* REDUCIDO: Padding vertical para un menú más compacto */
+  padding: 0.5rem 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  /* Espacio para la zona de clic */
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.nav a:hover {
+  background-color: var(--border);
+}
+
+/* Clase de Angular para el enlace activo */
+.active {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* Separa un poco el subrayado */
+}
+
+/* ---------------------------------- */
+/* COMPONENTES */
+/* ---------------------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tag {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-right: 0.5rem;
+  color: var(--muted);
+}
+
+button {
+  color: var(--fg);
+  /* Estilos para el botón de cambio de tema */
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--border);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--border);
+}
+
+/* Tipografía base y escala */
+h1 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+}
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin: 0 0 0.5rem;
+}
+p {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Foco visible accesible */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* ---------------------------------- */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+/* COMPONENTES ESPECÍFICOS */
+/* Tarjetas y media */
+.card img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+}
+
+/* Imágenes de redes sociales */
+.card img.social-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card img.social-image:hover {
+  transform: scale(1.02);
+}

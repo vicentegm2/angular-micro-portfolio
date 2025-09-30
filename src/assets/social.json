@@ -1,0 +1,26 @@
+[
+  {
+    "id": "x-1",
+    "platform": "x",
+    "handle": "@vicenteGM28",
+    "text": "Mi cuenta de X",
+    "url": "https://x.com/VicenteGM28",
+    "image": "assets/thumbs/socialNet-X.jpg"
+  },
+  {
+    "id": "ig-1",
+    "platform": "instagram",
+    "handle": "@vicentegm02",
+    "text": "Mi cuenta de Instagram",
+    "url": "https://www.instagram.com/vicentegm02/",
+    "image": "assets/thumbs/socialNet-Instagram.jpg"
+  },
+  {
+    "id": "li-1",
+    "platform": "linkedin",
+    "handle": "in/vicentegabrielgomezmedina",
+    "text": "Mi cuenta de LinkedIn",
+    "url": "https://www.linkedin.com/in/vicentegabrielgomezmedina/",
+    "image": "assets/thumbs/socialNet-Linkedin.jpg"
+  }
+]
