@@ -1,0 +1,32 @@
+[
+  {
+    "id": "x-1",
+    "platform": "x",
+    "author": "Vicente",
+    "handle": "@vicenteGM28",
+    "text": "Mi cuenta de X",
+    "url": "https://x.com/VicenteGM28",
+    "image": "assets/thumbs/x-sample.jpg",
+    "date": "2025-09-30T10:00:00Z"
+  },
+  {
+    "id": "ig-1",
+    "platform": "instagram",
+    "author": "Vicente",
+    "handle": "@vicentegm02",
+    "text": "Mi cuenta de Instagram",
+    "url": "https://www.instagram.com/vicentegm02/",
+    "image": "assets/thumbs/ig-sample.jpg",
+    "date": "2025-09-29T19:30:00Z"
+  },
+  {
+    "id": "li-1",
+    "platform": "linkedin",
+    "author": "Vicente",
+    "handle": "in/vicentegabrielgomezmedina",
+    "text": "Mi cuenta de LinkedIn",
+    "url": "https://www.linkedin.com/in/vicentegabrielgomezmedina/",
+    "image": "assets/thumbs/li-sample.jpg",
+    "date": "2025-09-28T08:15:00Z"
+  }
+]
