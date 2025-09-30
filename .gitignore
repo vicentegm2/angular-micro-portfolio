@@ -41,3 +41,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignoramos imágenes de perfil. 
+src/assets/profile-2.jpg
