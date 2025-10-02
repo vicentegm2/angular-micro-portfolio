@@ -1,13 +1,14 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Footer } from './shared/footer/footer';
 
 type Theme = 'light' | 'dark';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
